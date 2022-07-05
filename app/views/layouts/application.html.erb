@@ -12,6 +12,15 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <%= link_to 'Accueil', root_path %>
+        <%= link_to 'Articles', articles_path %>
+      </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <p>Réalisé avec l'aide de mon super formateur</p>
+    </footer>
   </body>
 </html>
