@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= link_to article do  %>
+      <h2><%= article.title %></h2>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to new_article_path do %>
+  <button>New article</button>
+<% end %>
