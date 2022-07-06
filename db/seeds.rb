@@ -25,7 +25,7 @@ end
 
 5.times do
   Article.create!(
-    title: Faker::TvShows::Buffy.quote,
+    title: Faker::Creature::Dog.name  ,
     content: Faker::Lorem.paragraphs.join("\n")
   )
 end
