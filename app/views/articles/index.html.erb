@@ -5,7 +5,7 @@
 <div id="articles">
   <% @articles.each do |article| %>
     <%= link_to article do  %>
-      <h2><%= article.title %></h2>
+      <h2><%= article.title %> (<%= article.likes %> likes)</h2>
     <% end %>
   <% end %>
 </div>
