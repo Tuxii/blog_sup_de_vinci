@@ -16,6 +16,8 @@
       <nav>
         <%= link_to 'Accueil', root_path %>
         <%= link_to 'Articles', articles_path %>
+        <%= link_to 'Log in', new_sessions_path unless logged_in? %>
+        <%= button_to 'Log out', sessions_path, method: :delete if logged_in? %>
       </nav>
       <% if logged_in? %>
         <p>Bienvenue <%= current_user.username %><p>

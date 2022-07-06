@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :verify_logged_in
+  before_action :verify_logged_in, only: %i[new create]
 
   def new
   end
@@ -13,6 +13,11 @@ class SessionsController < ApplicationController
       flash[:alert] = "Invalid username or password"
       render :new, status: :unauthorized
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url
   end
 
   private
