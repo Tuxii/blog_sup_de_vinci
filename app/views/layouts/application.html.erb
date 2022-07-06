@@ -17,7 +17,15 @@
         <%= link_to 'Accueil', root_path %>
         <%= link_to 'Articles', articles_path %>
       </nav>
+      <% if logged_in? %>
+        <p>Bienvenue <%= current_user.username %><p>
+      <% end %>
     </header>
+
+    <% flash.each do |type, message| %>
+      <%= display_flash_message(type, message) %>
+    <% end %>
+
     <%= yield %>
     <footer>
       <p>Réalisé avec l'aide de mon super formateur</p>

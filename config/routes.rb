@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
 
   get "/home", to: "home#show"
   get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
 end
